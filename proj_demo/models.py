@@ -26,7 +26,7 @@ class FeatAggregate(nn.Module):
             c_t2 = c_t2.cuda()
 
         for _, feat_t in enumerate(feats.chunk(feats.size(1), dim=1)):
-            h_t, c_t = self.lstm1(feat_t, (h_t, c_t))
+            h_t, c_t = self.lstm1(torch.squeeze(feat_t), (h_t, c_t))
             h_t2, c_t2 = self.lstm2(h_t, (h_t2, c_t2))
 
         # aggregated feature
