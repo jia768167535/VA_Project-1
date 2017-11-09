@@ -103,8 +103,8 @@ def train(train_loader, model, criterion, optimizer, epoch, opt):
         target = 1 - target
 
         # transpose the feats
-        vfeat0 = vfeat0.transpose(2, 1)
-        afeat0 = afeat0.transpose(2, 1)
+        # vfeat0 = vfeat0.transpose(2, 1)
+        # afeat0 = afeat0.transpose(2, 1)
 
         # put the data into Variable
         vfeat_var = Variable(vfeat0)
